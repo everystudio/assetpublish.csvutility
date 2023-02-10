@@ -5,7 +5,6 @@ using UnityEngine;
 public class DemoScript : MonoBehaviour
 {
     [SerializeField] private TextAsset localCsvFile;
-
     [SerializeField] private string saveFilename = "test_file";
 
     public void LoadFromLocalCsvFile()
