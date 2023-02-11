@@ -36,8 +36,7 @@ namespace anogamelib
                 string strValue = value;
                 if (value.Contains(':') && value.Contains('{') && value.Contains('}'))
                 {
-                    // jsonデータだと思うので"はのけない
-                    // そもそもなんなの、この処理
+                    // jsonデータ対応用
                 }
                 else
                 {
@@ -136,7 +135,7 @@ namespace anogamelib
         }
     }
 
-    public abstract class CsvModel<T> where T : CsvModelParam, new()
+    public class CsvModel<T> where T : CsvModelParam, new()
     {
         public List<T> List => list;
         public List<T> All { get { return list; } }

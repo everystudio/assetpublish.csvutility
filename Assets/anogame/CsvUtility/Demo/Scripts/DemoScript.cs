@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using anogamelib;
 
 public class DemoScript : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class DemoScript : MonoBehaviour
     {
         if (localCsvFile != null)
         {
-            SampleModel sampleModel = new SampleModel();
+            CsvModel<SampleModel> sampleModel = new();
             if (sampleModel.Load(localCsvFile))
             {
                 sampleModel.CheckDebugLog();
@@ -25,9 +26,9 @@ public class DemoScript : MonoBehaviour
 
     public void SaveToPersistentDataPath()
     {
-        SampleModel sampleModel = new SampleModel();
-        sampleModel.List.Add(new SampleModelParam() { test_int = 10, test_float = 10.0f });
-        sampleModel.List.Add(new SampleModelParam() { test_int = 12, test_float = 12.0f });
+        CsvModel<SampleModel> sampleModel = new();
+        sampleModel.List.Add(new SampleModel() { test_int = 10, test_float = 10.0f });
+        sampleModel.List.Add(new SampleModel() { test_int = 12, test_float = 12.0f });
 
         sampleModel.Save(saveFilename);
         Debug.Log("Check your directroy");
@@ -36,7 +37,7 @@ public class DemoScript : MonoBehaviour
 
     public void LoadFromPersistentDataPath()
     {
-        SampleModel sampleModel = new SampleModel();
+        CsvModel<SampleModel> sampleModel = new();
         if (sampleModel.Load(saveFilename))
         {
             sampleModel.CheckDebugLog();
