@@ -6,18 +6,7 @@ using anogamelib;
 public class DemoScript : MonoBehaviour
 {
     [SerializeField] private TextAsset localCsvFile;
-    private void Start()
-    {
-        CsvModel<SampleModel> sampleModel = new("test_file");
-        foreach (var param in sampleModel.List)
-        {
-            Debug.Log($"test_int={param.test_int} test_float={param.test_float}");
-        }
-    }
-
     [SerializeField] private string saveFilename = "test_file";
-
-
 
     public void LoadFromLocalCsvFile()
     {
