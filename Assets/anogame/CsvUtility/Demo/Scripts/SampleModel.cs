@@ -7,6 +7,8 @@ public class SampleModel : CsvModelParam
 {
     public int test_int;
     public float test_float;
-    public bool test_boolean;
-    public string test_string;
+    public override string ToString()
+    {
+        return $"test_int={test_int} test_float={test_float}";
+    }
 }
