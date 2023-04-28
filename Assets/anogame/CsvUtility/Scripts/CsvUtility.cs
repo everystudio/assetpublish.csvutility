@@ -140,7 +140,7 @@ namespace anogamelib
     {
         public List<T> List => list;
         public List<T> All { get { return list; } }
-        private List<T> list = new List<T>();
+        public List<T> list = new List<T>();
         public bool IsLoaded => loadedActionFinished;
 
         public CsvModel() { }
